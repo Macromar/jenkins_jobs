@@ -25,7 +25,8 @@ pipelineJob('Configuration as Code Plugin') {
                         archiveArtifacts 'target/*.jar'
                     }
                 }
-            sandbox()
-        }
-    }
-}
+            ''')
+                        sandbox()
+                    }
+                }
+            }
