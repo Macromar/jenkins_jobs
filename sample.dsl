@@ -16,7 +16,7 @@ pipelineJob('Configuration as Code Plugin') {
                             if (isUnix()) {
                                 sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package'
                             } else {
-                                bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+                                sh "exit 1"
                             }
                         }
                     }
