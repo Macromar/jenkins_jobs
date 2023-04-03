@@ -1,8 +1,15 @@
 pipelineJob('owesome_job') {
     definition {
         cps {
+
             script('''
+
                 node {
+                    properties([
+                        pipelineTriggers([
+                            [$class: "GitHubPushTrigger"]
+                        ])
+                    ])
                     def mvnHome
                     stage('Checkout') {
                         git 'https://github.com/Macromar/sampleMaven.git'
