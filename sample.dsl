@@ -1,8 +1,9 @@
 pipelineJob('owesome_job') {
 
     definition {
-        properties([pipelineTriggers([githubPush()])])
+
         cps {
+            properties([pipelineTriggers([githubPush()])])
             script('''
 
                 node {
