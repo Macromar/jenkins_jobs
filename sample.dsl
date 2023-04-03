@@ -1,6 +1,7 @@
-pipelineJob('owesome job') {
-    properties([pipelineTriggers([githubPush()])])
+pipelineJob('owesome_job') {
+
     definition {
+        properties([pipelineTriggers([githubPush()])])
         cps {
             script('''
 
