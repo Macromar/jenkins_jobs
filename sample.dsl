@@ -1,4 +1,4 @@
-pipelineJob('Configuration as Code Plugin') {
+pipelineJob('owesome job') {
     definition {
         cps {
             script('''
@@ -9,7 +9,7 @@ pipelineJob('Configuration as Code Plugin') {
                         git 'https://github.com/Macromar/sampleMaven.git'
                     }
                     stage ('setup tools'){
-                        mvnHome = tool 'Maven 3'
+                        mvnHome = tool 'M3'
                     }
                     stage('Build') {
                         withEnv(["MVN_HOME=$mvnHome"]) {
