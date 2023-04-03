@@ -1,8 +1,9 @@
 pipelineJob('owesome job') {
+    properties([pipelineTriggers([githubPush()])])
     definition {
         cps {
             script('''
-                properties([pipelineTriggers([githubPush()])])
+
                 node {
                     def mvnHome
                     stage('Checkout') {
