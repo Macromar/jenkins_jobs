@@ -1,12 +1,13 @@
 pipelineJob('owesome_job') {
     definition {
         cps {
+            properties([
+                pipelineTriggers([
+                    [$class: "GitHubPushTrigger"]
+                ])
+            ])
             script('''
-                properties([
-                    pipelineTriggers([
-                      [$class: "GitHubPushTrigger"]
-                    ])
-                  ])
+
                 node {
 
                     def mvnHome
