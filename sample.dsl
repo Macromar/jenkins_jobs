@@ -5,6 +5,9 @@ pipelineJob('owesome job') {
 
                 node {
                     def mvnHome
+                    triggers {
+                            githubPush()
+                    }
                     stage('Checkout') {
                         git 'https://github.com/Macromar/sampleMaven.git'
                     }
